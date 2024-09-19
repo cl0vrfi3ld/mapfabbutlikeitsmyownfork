@@ -10,7 +10,10 @@ jobs:
     runs-on: macos-13
 
     steps:
-    - uses: actions/checkout@v4
+    - name: checkout
+      uses: actions/checkout@v4
+      with:
+        submodules: recursive
     - name: setup env
       run: "export CC=$(which gcc) && export CXX=$(which g++)"
     - name: install deps
